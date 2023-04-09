@@ -3,10 +3,10 @@
         <path :d=region.d :fill="apiStates?.alert ? 'red' : '#6e85ed'" stroke='rgba(255, 255, 255, 0.2)' />
         <text
             fill='#fff'
-            strokeWidth="0.1"
+            stroke-width="0.1"
             xmlSpace="preserve"
             style="white-space: nowrap"
-            fontSize=20
+            font-size="20"
             :x=region.titleX
             :y=region.titleY
         >
