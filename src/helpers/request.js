@@ -1,14 +1,14 @@
 import axios from 'axios'
-import { API_KEY, API_URL } from '@/utils/consts.js'
+export const { VUE_APP_API_TOKEN, VUE_APP_API_URL } = process.env
 
 const headers = {
 	Accept: 'application/json',
 	'Content-Type': 'application/json',
-    'X-API-Key': API_KEY
+	Authorization: `Bearer ${VUE_APP_API_TOKEN}`
 }
 
 const service = axios.create({
-	baseURL: API_URL,
+	baseURL: VUE_APP_API_URL,
 	timeout: 10000,
 	headers
 })

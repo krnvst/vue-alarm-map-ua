@@ -1,7 +1,7 @@
 import request from '@/helpers/request'
 
 const endpoints = {
-    states: '/states',
+    states: '/alerts/active.json',
 }
 
 async function getStatesStatus() {

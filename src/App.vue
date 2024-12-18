@@ -22,4 +22,18 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+button {
+  background-color: rgb(110, 133, 237);
+; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  margin: 3px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 </style>

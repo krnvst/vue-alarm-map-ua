@@ -6,7 +6,7 @@
               v-for='region in regions'
               :key='region'
               :region=region
-              :api-states="states.find(states => states.id === region.id)"
+              :api-states="findState(region.id)"
             />
         </g>
     </svg>
@@ -24,13 +24,26 @@ export default {
   },
   props: {
     states: {
-      type: Object,
-      default: () => {}
-    }
+      type: [Array, Object], // Теперь поддерживаем и объект, и массив
+      default: () => [],
+    },
   },
   data: () => ({
-    regions,
+    regions: regions || [],
   }),
+  methods: {
+    /**
+     * Найти состояние для региона по его ID.
+     * Если states не является массивом, обработать его корректно.
+     * @param {string|number} regionId - Идентификатор региона
+     * @returns {Object} Состояние региона или пустой объект
+     */
+    findState(regionId) {
+      // Приводим states к массиву, если это объект (или возвращаем пустой массив)
+      const statesArray = Array.isArray(this.states) ? this.states : Object.values(this.states || {});
+      return statesArray.find(state => state.id === regionId) || {};
+    },
+  },
 };
 </script>
 <style lang='scss' scoped>

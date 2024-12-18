@@ -201,6 +201,7 @@ export const regions = [
   },
   {
     "id": 26,
+    "title": "Крим",
     "disabled": true,
     "titleX": 627,
     "titleY": 608,
